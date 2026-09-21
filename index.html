@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Swiss-cert begleitet Unternehmen mit klaren, verlässlichen Zertifizierungen und praxisnaher Beratung."
+    />
+    <meta name="theme-color" content="#c8102e" />
+    <title>Swiss-cert | Zertifizierung mit Schweizer Präzision</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --red: #c8102e;
+        --red-dark: #8f0b21;
+        --ink: #14213d;
+        --muted: #5f6b7a;
+        --line: #e5e9ef;
+        --soft: #f6f8fb;
+        --white: #ffffff;
+        --shadow: 0 24px 70px rgba(20, 33, 61, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--white);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(200, 16, 46, 0.1), transparent 30%),
+          linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+      }
+
+      .nav {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 24px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .mark {
+        width: 42px;
+        height: 42px;
+        position: relative;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--red);
+        box-shadow: 0 10px 28px rgba(200, 16, 46, 0.28);
+      }
+
+      .mark::before,
+      .mark::after {
+        content: "";
+        position: absolute;
+        background: var(--white);
+        border-radius: 2px;
+      }
+
+      .mark::before {
+        width: 22px;
+        height: 7px;
+      }
+
+      .mark::after {
+        width: 7px;
+        height: 22px;
+      }
+
+      .nav-link {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--red);
+      }
+
+      .hero {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        min-height: calc(100vh - 90px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+        align-items: center;
+        gap: 56px;
+        padding: 44px 0 80px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        padding: 8px 12px;
+        border: 1px solid rgba(200, 16, 46, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--red-dark);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--red);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(2.7rem, 7vw, 5.6rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 620px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .button {
+        min-height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 22px;
+        border-radius: 8px;
+        font-weight: 800;
+        border: 1px solid transparent;
+      }
+
+      .button-primary {
+        color: var(--white);
+        background: var(--red);
+        box-shadow: 0 16px 34px rgba(200, 16, 46, 0.24);
+      }
+
+      .button-secondary {
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .trust {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 46px;
+      }
+
+      .trust-item {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .trust-item strong {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .trust-item span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .certificate {
+        position: relative;
+        min-height: 520px;
+        padding: 28px;
+        border: 1px solid rgba(229, 233, 239, 0.9);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .certificate::before {
+        content: "";
+        position: absolute;
+        inset: 20px;
+        border: 1px solid rgba(200, 16, 46, 0.16);
+        border-radius: 6px;
+        pointer-events: none;
+      }
+
+      .cert-top {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cert-title {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+
+      .cert-id {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .seal {
+        width: 92px;
+        height: 92px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent),
+          var(--red);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 18px 38px rgba(200, 16, 46, 0.26);
+      }
+
+      .cert-body {
+        position: relative;
+        padding-top: 34px;
+      }
+
+      .cert-label {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .cert-name {
+        margin: 10px 0 18px;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .cert-copy {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .metric {
+        min-height: 92px;
+        padding: 16px;
+        border-radius: 8px;
+        background: var(--soft);
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.1rem;
+      }
+
+      .footer-line {
+        position: absolute;
+        right: 28px;
+        bottom: 28px;
+        left: 28px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 880px) {
+        .hero {
+          min-height: auto;
+          grid-template-columns: 1fr;
+          gap: 38px;
+          padding-top: 34px;
+        }
+
+        .certificate {
+          min-height: 470px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav,
+        .hero {
+          width: min(100% - 28px, 1120px);
+        }
+
+        .nav {
+          padding-top: 18px;
+        }
+
+        .nav-link {
+          display: none;
+        }
+
+        .trust,
+        .cert-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .certificate {
+          padding: 22px;
+        }
+
+        .certificate::before {
+          inset: 14px;
+        }
+
+        .cert-top {
+          align-items: flex-start;
+        }
+
+        .seal {
+          width: 76px;
+          height: 76px;
+          font-size: 0.68rem;
+          flex: 0 0 auto;
+        }
+
+        .footer-line {
+          position: static;
+          margin-top: 30px;
+          flex-direction: column;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="#" aria-label="Swiss-cert Startseite">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Swiss-cert</span>
+        </a>
+        <a class="nav-link" href="mailto:info@swiss-cert.ch">Kontakt aufnehmen</a>
+      </nav>
+
+      <section class="hero" aria-label="Swiss-cert Landingpage">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Schweizer Zertifizierung</p>
+          <h1>Zertifizierung mit Klarheit, Vertrauen und Präzision.</h1>
+          <p class="lead">
+            Swiss-cert unterstützt Unternehmen dabei, Qualität, Sicherheit und
+            Compliance sichtbar zu machen. Persönlich begleitet, verständlich
+            geprüft und bereit für Kunden, Partner und Märkte.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="mailto:info@swiss-cert.ch">Beratung anfragen</a>
+            <a class="button button-secondary" href="tel:+41000000000">+41 00 000 00 00</a>
+          </div>
+          <div class="trust" aria-label="Vorteile">
+            <div class="trust-item">
+              <strong>Verlässlich</strong>
+              <span>Klare Prozesse und transparente Nachweise.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Praxisnah</strong>
+              <span>Audits mit Fokus auf echte Unternehmensabläufe.</span>
+            </div>
+            <div class="trust-item">
+              <strong>International</strong>
+              <span>Starke Signale für Partner und Kunden weltweit.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="certificate" aria-label="Beispiel Zertifikat">
+          <div class="cert-top">
+            <div>
+              <p class="cert-title">Certificate of Trust</p>
+              <span class="cert-id">CH-SC-2026</span>
+            </div>
+            <div class="seal">SWISS<br />CERT</div>
+          </div>
+          <div class="cert-body">
+            <span class="cert-label">Geprüft durch Swiss-cert</span>
+            <p class="cert-name">Quality. Safety. Trust.</p>
+            <p class="cert-copy">
+              Ein starkes Zertifikat macht Standards sichtbar und schafft
+              Sicherheit bei Entscheidungen.
+            </p>
+            <div class="cert-grid">
+              <div class="metric">
+                <span>Schwerpunkt</span>
+                <strong>Qualität & Compliance</strong>
+              </div>
+              <div class="metric">
+                <span>Begleitung</span>
+                <strong>Audit bis Nachweis</strong>
+              </div>
+              <div class="metric">
+                <span>Anspruch</span>
+                <strong>Schweizer Präzision</strong>
+              </div>
+              <div class="metric">
+                <span>Ergebnis</span>
+                <strong>Sichtbares Vertrauen</strong>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line">
+            <span>swiss-cert.ch</span>
+            <span>Ready for deployment</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>
